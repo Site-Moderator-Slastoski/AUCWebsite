@@ -87,10 +87,58 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
       padding-top: 80px;
     }
+
+    .divider {
+      width: 100%;
+      height: 4px;
+      background-color: #444;
+      margin: 20px 0;
+    }
+
+    /* Container for the videos */
+    .video-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    /* Individual video card */
+    .video-card {
+      flex: 1 1 30%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .video-card h2 {
+      margin-bottom: 100px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 225px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .video-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    main {
+  position: relative;
+  z-index: 1;
+}
+
+    h2 {
+        font-size: 2em;
+        margin-top: 120px;
+    }
+
   </style>
 </head>
 <body>
@@ -105,6 +153,34 @@
       <a href="https://dsc.gg/amongusclassic" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
     </div>
   </nav>
+
+  <main>
+  <div class="overlay">
+    <h1>Tutorials</h1>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Video Section -->
+  <div class="video-section">
+    <!-- PC Video -->
+    <div class="video-card">
+      <h2>PC</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/q6iHjH91o_g?si=4pUVRIfTdQzSDAGv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
+
+    <!-- Android Video -->
+    <div class="video-card">
+      <h2>Android</h2>
+<iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/How-To-Play-OLD-Among-Us-on-Android!%3A5?r=A2NzvTixNNswgGEx6u36vV19s7MfpWFa" allowfullscreen></iframe>    </div>
+
+    <!-- iOS Video -->
+    <div class="video-card">
+      <h2>iOS</h2>
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+    </div>
+  </div>
+</main>
+
   
   <canvas id="circleCanvas"></canvas>
   <script>
