@@ -123,7 +123,7 @@
       border: none;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 50px) {
       .video-card {
         flex: 1 1 100%;
       }
@@ -137,6 +137,10 @@
     h2 {
         font-size: 2em;
         margin-top: 120px;
+    }
+
+    .overlay h1 {
+        font-size: 3.3em;
     }
 
   </style>
@@ -158,25 +162,28 @@
   <div class="overlay">
     <h1>Tutorials</h1>
   </div>
-
+ 
   <div class="divider"></div>
 
   <!-- Video Section -->
   <div class="video-section">
     <!-- PC Video -->
     <div class="video-card">
-      <h2>PC</h2>
+      <h2><i class="fa-solid fa-desktop" style="margin-right: 10px;"></i>PC</h2>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/q6iHjH91o_g?si=4pUVRIfTdQzSDAGv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
 
     <!-- Android Video -->
     <div class="video-card">
-      <h2>Android</h2>
+        <h2><i class="fa-brands fa-android" style="margin-right: 10px;"></i>Android</h2>
 <iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;" src="https://odysee.com/%24/embed/How-To-Play-OLD-Among-Us-on-Android!%3A5?r=A2NzvTixNNswgGEx6u36vV19s7MfpWFa" allowfullscreen></iframe>    </div>
 
     <!-- iOS Video -->
     <div class="video-card">
-      <h2>iOS</h2>
-      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+        <h2><i class="fa-brands fa-apple" style="margin-right: 10px;"></i>iOS (Via Trollstore)</h2>
+        <video controls width="100%">
+        <source src="assets/RPReplay_Final1725395078.mov" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
     </div>
   </div>
 </main>
