@@ -185,7 +185,35 @@
       }
     }
 
-    
+    .slideshow {
+      width: 100%;
+      max-width: 900px;
+      height: 300px;
+      overflow: hidden;
+      margin: auto;
+      position: relative;
+    }
+
+    .slideshow-track {
+      display: flex;
+      width: fit-content;
+      animation: scroll 15s linear infinite;
+    }
+
+    .slide {
+      min-width: 300px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10em;
+      margin-right: 0px; /* No line */
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-900px); }
+    }
   </style>
 </head>
 <body>
@@ -211,6 +239,19 @@
       <i class="fa-brands fa-discord"></i> Join our Discord
     </a>
   </div>
+
+  <div class="slideshow">
+    <div class="slideshow-track" id="track">
+    <div class="slide"><i class="fa-solid fa-desktop"></i></div>
+    <div class="slide"><i class="fa-brands fa-android"></i></div>
+    <div class="slide"><i class="fa-brands fa-apple"></i></div>
+
+    <div class="slide"><i class="fa-solid fa-desktop"></i></div>
+    <div class="slide"><i class="fa-brands fa-android"></i></div>
+    <div class="slide"><i class="fa-brands fa-apple"></i></div>
+  </div>
+</div>
+
   <div class="example-section">
     <div class="example-image">
       <img src="assets/Example.png" alt="In-Game Screenshot">
@@ -220,6 +261,37 @@
       <p>Experience the original vibes of Among Us with classic maps, legacy UI, and the nostalgic feel of 2020 gameplay. No modern clutter — just pure impostor fun, the way it used to be.</p>
     </div>
   </div>
+
+  <div class="example-section">
+    <div class="example-image">
+      <img src="assets/Example 2.png" alt="In-Game Screenshot">
+    </div>
+    <div class="example-text">
+      <h2>NO Account Creation!</h2>
+      <p>You don't have to mess around with creating an account with Innersloth's terrible system. Just put any name you want, it's that simple!</p>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <div class="example-image">
+      <img src="assets/Example 3.png" alt="In-Game Screenshot">
+    </div>
+    <div class="example-text">
+      <h2>The CLASSIC Character & UI Sprites</h2>
+      <p>Oh, this is nostalgic now. Feels like 2020 again with the Classic Among Us Sprites and UI Sprites. (they look better)</p>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <div class="example-image">
+      <img src="assets/Example 4.png" alt="In-Game Screenshot">
+    </div>
+    <div class="example-text">
+      <h2>Old Impostor & Crewmate Screen</h2>
+      <p>Do not know why Innersloth made the text all uppercase, lowercase was simply better. You can experience that again! Join the Discord today!</p>
+    </div>
+  </div>
+
 
   <script>
     const canvas = document.getElementById('circleCanvas');
@@ -264,6 +336,17 @@
 
       requestAnimationFrame(animate);
     }
+
+    const track = document.getElementById('track');
+    let index = 0;
+    const totalSlides = 3;
+
+    function nextSlide() {
+      index = (index + 1) % totalSlides;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
 
     animate();
   </script>
